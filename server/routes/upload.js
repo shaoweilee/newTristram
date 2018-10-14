@@ -2,13 +2,15 @@ const express = require('express');
 const formidable = require('formidable');
 const fsPromise = require('fs').promises;
 const path = require('path');
+const config = require('../config/index');
 const router = express.Router();
 
 router.post('/', (req, res) => {
   const form = new formidable.IncomingForm();
   const newPaths = [];
   const promises = [];
-  form.uploadDir = './public/upload/imgs';
+  const uploadDir = path.resolve(__dirname, config.serverImgUploadDir);
+  form.uploadDir = config.env === 'production' ? uploadDir : config.localDevImgUploadDir;
   form.parse(req, (err, fields, files) => {
     for (const key in files) {
       if (files.hasOwnProperty(key)) {
@@ -32,7 +34,7 @@ router.post('/', (req, res) => {
     Promise.all(promises)
       .then(() => {
         const urlPaths = newPaths.map((newPath) => {
-          return newPath.replace('public', 'http://www.herosanctuary.com/static').replace(/\\/g, '/');
+          return newPath.replace(config.env === 'production' ? config.serverImgUploadReplace : config.localDevImgUploadReplace, 'http://www.herosanctuary.com/static').replace(/\\/g, '/');
           // return path.normalize(newPath.replace('public', 'http://localhost:5499/static'));
         });
         console.log(urlPaths);

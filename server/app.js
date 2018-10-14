@@ -11,8 +11,7 @@ const uploadRouter = require('./routes/upload');
 const apiRouter = require('./routes/apis');
 const searchRouter = require('./routes/search');
 
-const { articleModel } = require('./models/articleModel');
-
+const config = require('./config');
 const app = express();
 app.use(history({
   verbose: true,
@@ -20,7 +19,7 @@ app.use(history({
 }));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-// app.use('*', function (req, res, next) {
+// app.use('*', function (req, res, next) {//本地开发跨域配置。
 //   res.header('Access-Control-Allow-Origin', 'http://192.168.1.110:1001');
 //   res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
 //   res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
@@ -41,14 +40,7 @@ app.use('/write', [notebookRouter, articleRouter]);
 app.use('/upload', uploadRouter);
 app.use('/search', searchRouter);
 
-const server = app.listen(80, function () {
+const server = app.listen(config.env === 'production' ? 80 : 5499, function () {
   const port = server.address().port;
   console.log(`服务器在${port}端口运行！`);
 });
-
-// (async () => {
-//   const result = await articleModel.find({
-//     where: { articleName: { $like: '%哈%' } },
-//   });
-//   console.log(result);
-// })();
