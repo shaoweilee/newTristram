@@ -20,17 +20,17 @@ app.use(history({
 }));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-app.use('*', function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'http://192.168.1.110:1001');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
-  res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
-  res.header('Access-Control-Allow-Credentials', 'true');
-  if (req.method === 'OPTIONS') {
-    res.send(200);
-  } else {
-    next();
-  }
-});
+// app.use('*', function (req, res, next) {
+//   res.header('Access-Control-Allow-Origin', 'http://192.168.1.110:1001');
+//   res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
+//   res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
+//   res.header('Access-Control-Allow-Credentials', 'true');
+//   if (req.method === 'OPTIONS') {
+//     res.send(200);
+//   } else {
+//     next();
+//   }
+// });
 
 const jsonParser = bodyParser.json();
 app.use(jsonParser);
@@ -41,7 +41,7 @@ app.use('/write', [notebookRouter, articleRouter]);
 app.use('/upload', uploadRouter);
 app.use('/search', searchRouter);
 
-const server = app.listen(5499, function () {
+const server = app.listen(80, function () {
   const port = server.address().port;
   console.log(`服务器在${port}端口运行！`);
 });
