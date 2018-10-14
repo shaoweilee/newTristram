@@ -13,7 +13,7 @@ module.exports = {
   output: {
     filename: '[name]_[chunkhash:8].js',
     chunkFilename: '[name]_[chunkhash:8].js',
-    path: `${__dirname}/dist`,
+    path: `${__dirname}/server/public/dist`,
     // publicPath: 'http://123.206.55.41/static/dist/',
     publicPath: 'http://www.herosanctuary.com/static/dist/',
     // publicPath: './',

@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
     Promise.all(promises)
       .then(() => {
         const urlPaths = newPaths.map((newPath) => {
-          return newPath.replace('public', 'http://localhost:5499/static').replace(/\\/g, '/');
+          return newPath.replace('public', 'http://www.herosanctuary.com/static').replace(/\\/g, '/');
           // return path.normalize(newPath.replace('public', 'http://localhost:5499/static'));
         });
         console.log(urlPaths);
