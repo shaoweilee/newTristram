@@ -1,0 +1,77 @@
+@import '../../common/styles/editor';
+.main{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+
+  .sider-fixed{
+    position: fixed;
+    left: 0;
+    height: 100vh;
+    overflow: auto;
+  }
+  // .content_container{
+  //   margin-left: 300px;
+    
+    .editor_container{
+      position: relative;
+      
+      .show_mask{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background: #e3e3e3;
+        position: absolute;
+        z-index: 10002;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+      }
+      .hide_mask{
+        display: none;
+      }
+      .editor_title{
+        width: 100%;
+        padding: 20px 80px 10px 40px;
+        margin-bottom: 0;
+        border: none;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 30px;
+        text-align: center;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: #595959;
+        background-color: transparent;
+        outline: none;
+        border-radius: 0;
+        overflow: hidden;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .editor_border{
+        border-bottom: 1px solid #ddd;
+      }
+      .editor_toolbar{
+        margin: 0 auto;
+        width: 980px;
+      }
+      .editor_text{
+        height: calc(100vh - 102px);
+        width: 1080px;
+        margin: 0 auto;
+
+        &>div:nth-of-type(1){
+          padding: 50px;
+          overflow-y: auto;
+          @include editor;
+        }
+      }
+    }
+  // }
+}

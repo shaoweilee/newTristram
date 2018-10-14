@@ -1,0 +1,10 @@
+const GET_WRITTER_LIST = 'get_writter_list';
+const CHANGE_WRITTER_LIST = 'change_writter_list';
+const GET_INITIAL_HOME_DATA = 'get_initial_home_data';
+const GET_MORE_ARTICLE = 'get_more_article';
+const CHANGE_SCROLL_TOP_STATE = 'change_scroll_top_state';
+const INCREASE_REQUEST_PAGE = 'increase_request_page';
+const CHANGE_HAS_MORE_IN_HOME = 'change_has_more_in_home';
+const GET_ARTICLES = 'get_articles';
+const RESET_DATA = 'reset_data';
+export { GET_WRITTER_LIST, CHANGE_WRITTER_LIST, GET_INITIAL_HOME_DATA, GET_MORE_ARTICLE, CHANGE_SCROLL_TOP_STATE, INCREASE_REQUEST_PAGE, CHANGE_HAS_MORE_IN_HOME, GET_ARTICLES, RESET_DATA };

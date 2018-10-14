@@ -1,0 +1,13 @@
+.publish_btn_container{
+  position: absolute;
+  right: 16px;
+  top: 60px;
+  width: 100px;
+  .publish_btn-loading{
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-40%);
+    z-index: 1;
+  }
+}

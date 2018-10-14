@@ -1,0 +1,35 @@
+.topic_container{
+  margin: 30px 0;
+
+  .topic_list{
+    display: flex;
+    flex-flow: row wrap;
+    font-size: 14px;
+
+    .topic_item{
+      margin: 0 20px 20px 0;
+      background-color: #f7f7f7;
+      border: 1px solid #dcdcdc;
+      border-radius: 4px;
+      height: 32px;
+      overflow: hidden;
+      
+      // &:last-child{
+      //   background: transparent;
+      //   border: none;
+      // }
+      .topic_link{
+        display: inline-flex;
+
+        .topic_img{
+          width: 32px;
+          height: 32px;
+        }
+        .topic_text{
+          line-height: 32px;
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}

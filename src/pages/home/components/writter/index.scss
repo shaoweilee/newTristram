@@ -1,0 +1,71 @@
+.writter_container{
+  margin-top: 15px;
+
+  .writter_title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 10px;
+
+    .title_switch, .iconfont{
+      font-size: 12px;
+    }
+    .iconfont{
+      display: inline-block;
+      margin-right: 5px;
+      transition: all 0.5s ease;
+      transform-origin: center center;
+    }
+  }
+  .writter_list{
+    
+    .writter_item{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      
+      .writter_link{
+        border-radius: 50%;
+        background: #555;
+        overflow: hidden;
+        
+        .writter_avator{
+          width: 48px;
+          height: 48px;
+          display: block;
+        }
+      }
+      .writter_info{
+        display: flex;
+        flex: auto;
+        justify-content: space-between;
+        margin-left: 10px;
+        
+        .writter_follow{
+          font-size: 12px;
+          color: #42c02e;
+        }
+        .info_nickname{
+          font-size: 14px;
+        }
+        .info_detail{
+          font-size: 12px;
+          color: #969696;
+          line-height: 2;
+        }
+      }
+    }
+
+  }
+  .writter_more{
+    display: block;
+    text-align: center;
+    padding: 7px;
+    font-size: 14px;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+  }
+}

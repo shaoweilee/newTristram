@@ -1,0 +1,37 @@
+.content_container{
+  display: flex;
+  // justify-content: space-between;
+  justify-content: center;
+  width: 960px;
+  margin: 0 auto;
+
+  .content_left{
+    width: 625px;
+  }
+  .content_right{
+    width: 280px;
+  }
+  .backTop{
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid #dcdcdc;
+
+    .backTop_btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+
+      .backTop_btn_content{
+        width: 10px;
+        height: 10px;
+        border: 1px solid #333333;
+        border-bottom: none;
+        border-right: none;
+        transform: rotate(45deg);
+      }
+    }
+  }
+}
