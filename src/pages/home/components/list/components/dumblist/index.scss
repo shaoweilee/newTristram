@@ -23,10 +23,14 @@
         justify-content: space-between;
 
         .summary_title{
+          color: #333;
           font-size: 18px;
           font-weight: bold;
           &:hover{
             text-decoration: underline;
+          }
+          &:visited{
+            color: #969696;
           }
         }
         .summary_content, .summary_extraInfo{

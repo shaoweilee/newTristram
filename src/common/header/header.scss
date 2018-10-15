@@ -55,6 +55,7 @@
           }
 
           .search_btn{
+            color: #333;
             margin: 0;
             transform: translate(-44px);
             width: 30px;
@@ -63,6 +64,9 @@
             line-height: 30px;
             border-radius: 50%;
             transition: all 300ms ease;
+            &:hover, &:visited, &:focus{
+              text-decoration: none;
+            }
           }
           .fade-enter-active{
             background: #bbbbbb;
@@ -100,6 +104,7 @@
                 font-size: 14px;
               }
               .iconfont, .switch{
+                color: #969696;
                 font-size: 12px;
                 margin: 0 2px;
               }
@@ -145,6 +150,9 @@
         height: 40px;
         line-height: 40px;
         padding: 0 12px;
+      }
+      .login{
+        color: #333333;
       }
       .write{
         border-radius: 20px;

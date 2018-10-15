@@ -94,7 +94,7 @@ class Header extends React.Component {
             </li>
             <li className='nav_right'>
               {/* <a><i className="iconfont icon-Aa"></i></a> */}
-              {loginStatus ? <a onClick={logout}>退出</a> : <Link to='/login'>登录</Link>}
+              {loginStatus ? <a onClick={logout} className='login'>退出</a> : <Link to='/login' className='login'>登录</Link>}
               {loginStatus ? null : <Link className='signUp' to='/sign_up'>注册</Link>}
               <Link className='write' to='/write'><i className="iconfont icon-icon-checkin"></i>写文章</Link>
             </li>

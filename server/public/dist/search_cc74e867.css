@@ -31,10 +31,13 @@
     flex-flow: column;
     justify-content: space-between; }
     .articlelist_container .articlelist_list .articlelist_Item .articlelist_summary .summary_title {
+      color: #333;
       font-size: 18px;
       font-weight: bold; }
       .articlelist_container .articlelist_list .articlelist_Item .articlelist_summary .summary_title:hover {
         text-decoration: underline; }
+      .articlelist_container .articlelist_list .articlelist_Item .articlelist_summary .summary_title:visited {
+        color: #969696; }
     .articlelist_container .articlelist_list .articlelist_Item .articlelist_summary .summary_content, .articlelist_container .articlelist_list .articlelist_Item .articlelist_summary .summary_extraInfo {
       color: #999; }
     .articlelist_container .articlelist_list .articlelist_Item .articlelist_summary .summary_content {
