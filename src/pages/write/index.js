@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import E from "wangeditor";
-import { Layout, Menu, Icon, Button, Tree, message, Spin } from "antd";
+import { Layout, Button, Tree, message, Spin } from "antd";
 import { Link, withRouter } from "react-router-dom";
 import { actionCreators } from "./store";
 import { InputWithButtons } from "./components/inputwithbuttons";
