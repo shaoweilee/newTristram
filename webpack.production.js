@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  devtool: 'source-map',
+  // devtool: 'source-map',
+  devtool: 'false',
   mode: 'production',
   entry: {
     index: './src/index.js',
@@ -54,7 +55,7 @@ module.exports = {
     new ExtractTextPlugin({
       filename: '[name]_[chunkhash:8].css',
     }),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['server/public/dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',

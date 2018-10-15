@@ -3,6 +3,7 @@ const history = require('connect-history-api-fallback');//解决spa二级路由�
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
+const compression = require('compression');
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/users');
 const notebookRouter = require('./routes/notebooks');
@@ -19,6 +20,7 @@ app.use(history({
 }));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
+app.use(compression());//use g-zip;
 // app.use('*', function (req, res, next) {//本地开发跨域配置。
 //   res.header('Access-Control-Allow-Origin', 'http://192.168.1.110:1001');
 //   res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
