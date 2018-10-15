@@ -2,6 +2,13 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+// 为每个页面定义一个 ExtractTextPlugin 
+// const homeExtractCss = new ExtractTextPlugin('home/[name].[chunkhash:8].css');
+// const searchExtractCss = new ExtractTextPlugin('search/[name].[chunkhash:8].css');
+// const detailExtractCss = new ExtractTextPlugin('detail/[name].[chunkhash:8].css');
+
+
+
 module.exports = {
   // devtool: 'source-map',
   devtool: 'false',
@@ -49,12 +56,41 @@ module.exports = {
           fallback: ['style-loader'],
         }),
       },
+      // {
+      //   test: /\.\/src\/(?!pages)((common|statics)\/)*([a-z]+\/)*.*\.(css|scss)$/,//匹配到了 但是不生效
+      //   use: ExtractTextPlugin.extract({
+      //     fallback: 'style-loader',
+      //     use: ['css-loader', 'sass-loader'],
+      //   })
+      // },
+      // {
+      //   test: /\.\/src\/pages\/detail\/([a-z]+\/)*.*\.(css|scss)$/,//匹配到了 但是不生效
+      //   use: detailExtractCss.extract({
+      //     fallback: 'style-loader',
+      //     use: ['css-loader', 'sass-loader'],
+      //   })
+      // },
+      // {
+      //   test: /\.\/src\/pages\/search\/([a-z]+\/)*.*\.(css|scss)$/,
+      //   use: searchExtractCss.extract({
+      //     fallback: 'style-loader',
+      //     use: ['css-loader', 'sass-loader'],
+      //   })
+      // },
+      // {
+      //   test: /\.\/src\/pages\/home\/([a-z]+\/)*.*\.(css|scss)$/,
+      //   use: homeExtractCss.extract({
+      //     fallback: 'style-loader',
+      //     use: ['css-loader', 'sass-loader'],
+      //   })
+      // },
     ],
   },
   plugins: [
     new ExtractTextPlugin({
       filename: '[name]_[chunkhash:8].css',
     }),
+    // homeExtractCss, searchExtractCss, detailExtractCss,//new
     new CleanWebpackPlugin(['server/public/dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
