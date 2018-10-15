@@ -73,7 +73,7 @@ class Header extends React.Component {
           <ul className='nav'>
             <li>
               <Link className='logo' to='/'>
-                <img src={logoPic} className='logoPic'></img>
+                <img src={logoPic} className='logoPic' alt='返回新崔斯特姆'></img>
               </Link>
             </li>
             <li className='nav_padding'></li>
