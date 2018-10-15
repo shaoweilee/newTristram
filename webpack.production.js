@@ -95,14 +95,17 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/index.html',
+      favicon: './src/statics/tristram-icon.jpg',
     }),
     new HtmlWebpackPlugin({
       filename: 'search.html',
       template: './src/pages/search/index.html',
+      favicon: './src/statics/tristram-icon.jpg',
     }),
     new HtmlWebpackPlugin({
       filename: 'detail.html',
       template: './src/pages/detail/index.html',
+      favicon: './src/statics/tristram-icon.jpg',
     }),
   ],
   optimization: {

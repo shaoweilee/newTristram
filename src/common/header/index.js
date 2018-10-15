@@ -6,7 +6,7 @@ import { actionCreators, constants } from "./store";
 import { actionCreators as loginActionCreators } from "../../pages/login/store";
 import { authentication } from "../authentication";
 import "./header.scss";
-import logoPic from "../../statics/简书logo.png";
+import logoPic from "../../statics/tristram.jpg";
 import { requestURL } from "../config";
 //UI Header
 class Header extends React.Component {
