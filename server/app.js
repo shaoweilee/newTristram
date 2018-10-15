@@ -14,13 +14,13 @@ const searchRouter = require('./routes/search');
 
 const config = require('./config');
 const app = express();
+app.use(compression());//use g-zip;
 app.use(history({
   verbose: true,
   index: '/',
 }));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-app.use(compression());//use g-zip;
 // app.use('*', function (req, res, next) {//本地开发跨域配置。
 //   res.header('Access-Control-Allow-Origin', 'http://192.168.1.110:1001');
 //   res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
