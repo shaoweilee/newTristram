@@ -14,10 +14,16 @@ module.exports = {
   devtool: 'false',
   mode: 'production',
   entry: {
+    'babel-polyfill': 'babel-polyfill',
     index: './src/index.js',
     search: './src/pages/search/index.js',
     detail: './src/pages/detail/index.js',
   },
+  // entry: {
+  //   index: './src/index.js',
+  //   search: './src/pages/search/index.js',
+  //   detail: './src/pages/detail/index.js',
+  // },
   output: {
     filename: '[name]_[chunkhash:8].js',
     chunkFilename: '[name]_[chunkhash:8].js',
