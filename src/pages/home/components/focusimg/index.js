@@ -87,7 +87,9 @@ class FocusImg extends React.Component {
   }
   setIndicatorAcitve = (currentIndex = 0, indicatorItems = this.state.indicatorItems) => {
     const thisOneWillDeactive = indicatorItems.find((el) => {
-      return el.classList.contains('active');
+      if (el) {
+        return el.classList.contains('active');
+      }
     });
     if (thisOneWillDeactive) {
       thisOneWillDeactive.classList.remove('active');
