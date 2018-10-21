@@ -6,6 +6,7 @@ module.exports = {
   devtool: 'eval-source-map',
   mode: 'development',
   entry: {
+    'babel-polyfill': 'babel-polyfill',
     index: './src/index.js',
   },
   output: {
@@ -17,7 +18,7 @@ module.exports = {
   devServer: {
     contentBase: './dist',
     hot: true,
-    host: '192.168.1.110',
+    host: '192.168.1.111',
     port: '1001',
     historyApiFallback: true,
     inline: true,

@@ -2,6 +2,50 @@ import React from "react";
 
 import "./FocusImg.scss";
 
+//IE9不支持classlist，手动添加
+if (!("classList" in document.documentElement)) {
+  Object.defineProperty(HTMLElement.prototype, 'classList', {
+    get: function () {
+      var self = this;
+      function update(fn) {
+        return function (value) {
+          var classes = self.className.split(/\s+/g),
+            index = classes.indexOf(value);
+
+          fn(classes, index, value);
+          self.className = classes.join(" ");
+        }
+      }
+
+      return {
+        add: update(function (classes, index, value) {
+          if (!~index) classes.push(value);
+        }),
+
+        remove: update(function (classes, index) {
+          if (~index) classes.splice(index, 1);
+        }),
+
+        toggle: update(function (classes, index, value) {
+          if (~index)
+            classes.splice(index, 1);
+          else
+            classes.push(value);
+        }),
+
+        contains: function (value) {
+          return !!~self.className.split(/\s+/g).indexOf(value);
+        },
+
+        item: function (i) {
+          return self.className.split(/\s+/g)[i] || null;
+        }
+      };
+    }
+  });
+}
+
+
 class FocusImg extends React.Component {
   state = {
     timer: null,
@@ -87,9 +131,7 @@ class FocusImg extends React.Component {
   }
   setIndicatorAcitve = (currentIndex = 0, indicatorItems = this.state.indicatorItems) => {
     const thisOneWillDeactive = indicatorItems.find((el) => {
-      if (el) {
-        return el.classList.contains('active');
-      }
+      return el.classList.contains('active');
     });
     if (thisOneWillDeactive) {
       thisOneWillDeactive.classList.remove('active');

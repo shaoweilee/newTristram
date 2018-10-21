@@ -142,33 +142,11 @@ a {
 a:hover {
   text-decoration: none;
   cursor: pointer; }
-.content_container {
+.loading_container {
+  height: 100vh;
   display: flex;
   justify-content: center;
-  width: 960px;
-  margin: 0 auto; }
-  .content_container .content_left {
-    width: 625px; }
-  .content_container .content_right {
-    width: 280px; }
-  .content_container .backTop {
-    position: fixed;
-    right: 40px;
-    bottom: 40px;
-    border: 1px solid #dcdcdc; }
-    .content_container .backTop .backTop_btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50px;
-      height: 50px; }
-      .content_container .backTop .backTop_btn .backTop_btn_content {
-        width: 10px;
-        height: 10px;
-        border: 1px solid #333333;
-        border-bottom: none;
-        border-right: none;
-        transform: rotate(45deg); }
+  align-items: center; }
 @font-face {
   font-family: "iconfont";
   src: url(http://www.herosanctuary.com/static/dist/037c0f734e07bd11e39feb594ad96c8c.eot);
@@ -426,11 +404,33 @@ a:hover {
         list-style: circle; }
       .article_container .article_content .article_text ol {
         list-style: decimal; }
-.loading_container {
-  height: 100vh;
+.content_container {
   display: flex;
   justify-content: center;
-  align-items: center; }
+  width: 960px;
+  margin: 0 auto; }
+  .content_container .content_left {
+    width: 625px; }
+  .content_container .content_right {
+    width: 280px; }
+  .content_container .backTop {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid #dcdcdc; }
+    .content_container .backTop .backTop_btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px; }
+      .content_container .backTop .backTop_btn .backTop_btn_content {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #333333;
+        border-bottom: none;
+        border-right: none;
+        transform: rotate(45deg); }
 .not_container {
   margin-top: 200px;
   display: flex;
