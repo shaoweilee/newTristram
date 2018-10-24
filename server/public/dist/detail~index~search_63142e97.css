@@ -119,11 +119,13 @@
       .nav_container .nav .nav_right .login {
         color: #333333; }
       .nav_container .nav .nav_right .write {
+        display: block;
         border-radius: 20px;
         width: 100px;
         background: #ea6f5a;
         color: #ffffff; }
       .nav_container .nav .nav_right .signUp {
+        display: block;
         border-radius: 20px;
         color: #ea6f5a;
         border: 1px solid #ea6f5a;
