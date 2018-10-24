@@ -1,4 +1,4 @@
-const env = 'productio';
+const env = 'production';
 const dbPassword = env === 'production' ? '{Lili6361845}' : null;
 
 const serverImgUploadDir = '../public/upload/imgs';

@@ -37,22 +37,22 @@ class Home extends React.Component {
               loop={true}
               totalImgCount={3}
               imgSource={this.props.focusImgData.toJS()}
-              imgSource={
-                [
-                  {
-                    "id": 1538215638112,
-                    "img": "https://upload.jianshu.io/admin_banners/web_images/4369/0cc77fa3ef12b099ba0237da2616c87cba0f58ae.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
-                  },
-                  {
-                    "id": 15382115638112,
-                    "img": "https://upload.jianshu.io/admin_banners/web_images/4390/5f848ed808ef75163e469c1639a248790f7f18af.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
-                  },
-                  {
-                    "id": 15382156238112,
-                    "img": "https://upload.jianshu.io/admin_banners/web_images/4392/3b02934492d0f9bb8f3e58c969618a38dce7ca37.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
-                  }
-                ]
-              }
+              // imgSource={
+              //   [
+              //     {
+              //       "id": 1538215638112,
+              //       "img": "https://upload.jianshu.io/admin_banners/web_images/4369/0cc77fa3ef12b099ba0237da2616c87cba0f58ae.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+              //     },
+              //     {
+              //       "id": 15382115638112,
+              //       "img": "https://upload.jianshu.io/admin_banners/web_images/4390/5f848ed808ef75163e469c1639a248790f7f18af.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+              //     },
+              //     {
+              //       "id": 15382156238112,
+              //       "img": "https://upload.jianshu.io/admin_banners/web_images/4392/3b02934492d0f9bb8f3e58c969618a38dce7ca37.jpeg?imageMogr2/auto-orient/strip|imageView2/1/w/1250/h/540"
+              //     }
+              //   ]
+              // }
             />
             <Topic />
             <List />
