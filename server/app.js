@@ -21,17 +21,17 @@ app.use(history({
 }));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
-// app.use('*', function (req, res, next) {//本地开发跨域配置。
-//   res.header('Access-Control-Allow-Origin', 'http://192.168.1.110:1001');
-//   res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
-//   res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
-//   res.header('Access-Control-Allow-Credentials', 'true');
-//   if (req.method === 'OPTIONS') {
-//     res.send(200);
-//   } else {
-//     next();
-//   }
-// });
+app.use('*', function (req, res, next) {//本地开发跨域配置。
+  res.header('Access-Control-Allow-Origin', 'http://192.168.1.111:1001');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With');
+  res.header('Access-Control-Allow-Methods', 'PUT,POST,GET,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  if (req.method === 'OPTIONS') {
+    res.send(200);
+  } else {
+    next();
+  }
+});
 
 const jsonParser = bodyParser.json();
 app.use(jsonParser);

@@ -1,0 +1,120 @@
+// 主页兼容ie9
+.nav_container {
+  height: 100%;
+  .nav{
+    height: 100%;
+    display: block;
+
+    .nav_middle{
+      position: relative;
+      height: 100%;
+
+      .nav_search_container{
+        height: 38px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+      }
+    }
+    .nav_right{
+      position: relative;
+      top: 50%;
+      margin-top: -19px;
+    }
+  }
+
+  li{
+    float: left;
+  }
+  .nav_right{
+    float: right;
+    
+    a{
+      float: left;
+    }
+  }
+}
+.content_left{
+  margin: 0 auto;
+}
+.search_info{
+
+  .search_wrapper{
+
+    .content{
+
+      .contentItem{
+        display: inline-block;
+      }
+    }
+  }
+}
+//topic
+.topic_list {
+
+  .topic_item{
+    display: inline-block;
+    box-sizing: content-box;
+
+    .topic_link{
+      display: block;
+
+      .topic_img{
+        float: left;
+      }
+    }
+  }
+}
+.banner_foucsImg{
+  height: 270px;
+}
+.foucsImg_container{
+  position: absolute;
+  left: 0;
+  .foucsImg_item{
+    display: inline-block;
+  }
+}
+// .indicator_container{
+//   width: 200px;
+//   position: absolute;
+//   left: 0;right:0;
+//   margin: 0 auto;
+//   bottom: 25px;
+//   text-align: center;
+//   height: 20px;
+
+  .foucsImg_indicator{
+    // bottom: 0;
+    // display: inline-block;
+    text-align: center;
+    .indicator_item{
+      display: inline-block;
+    }
+  }
+// }
+// 注册登录兼容ie9
+.login_container{
+
+  .login_pop{
+    height: 305px;
+    position: absolute;
+    left: 0;right: 0;top: 0;bottom: 0;
+    margin: auto;
+
+    .sign_nav{
+      text-align: center;
+      .nav_list{
+        display: inline-block;
+        .nav_item{
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .remember_wrapper{
+    text-align: center;
+  }
+}

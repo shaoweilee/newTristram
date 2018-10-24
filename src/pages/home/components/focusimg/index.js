@@ -1,6 +1,8 @@
 import React from "react";
-
+import { Move } from "../../../../common/move";
 import "./FocusImg.scss";
+
+const ISIE9 = window.navigator.userAgent.indexOf('MSIE 9.0') > 0;
 
 //IE9不支持classlist，手动添加
 if (!("classList" in document.documentElement)) {
@@ -54,12 +56,14 @@ class FocusImg extends React.Component {
     currentIndex: 0,
     indicatorContainer: null,
     indicatorItems: null,
+    ie9Move: null,
   }
   componentDidMount() {
     this.setState(
       {
         imgItems: [...this.state.imgContainer.querySelectorAll('li')],
         indicatorItems: [...this.state.indicatorContainer.querySelectorAll('li')],
+        // ie9Move: ISIE9 ? new Move(document.querySelector('.foucsImg_container')) : null,
       },
       () => {
         this.setIndicatorAcitve(this.state.currentIndex);
@@ -84,7 +88,12 @@ class FocusImg extends React.Component {
     });
   }
   imgContainerMove = (targetIndex) => {
-    this.state.imgContainer.style.transform = `translateX(${-this.props.imgWidth * targetIndex}px)`;
+    if (ISIE9) {
+      // this.state.imgContainer.style.left = `${-this.props.imgWidth * targetIndex}px`;
+      this.state.ie9Move.move('linear', { left: -this.props.imgWidth * targetIndex }, 300);
+    } else {
+      this.state.imgContainer.style.transform = `translateX(${-this.props.imgWidth * targetIndex}px)`;
+    }
   }
   HandleIndicatorClick = (e) => {
     if (e.target.tagName !== 'LI') {
@@ -105,6 +114,7 @@ class FocusImg extends React.Component {
     }, 0);
   }
   handleMouseLeave = () => {
+    clearInterval(this.state.timer);
     this.runTimer(this.state.currentIndex);
   }
 
@@ -143,6 +153,7 @@ class FocusImg extends React.Component {
     this.setState({
       indicatorContainer: document.querySelector('.foucsImg_indicator'),
       indicatorItems: [...document.querySelectorAll('.indicator_item')],
+      ie9Move: ISIE9 ? new Move(this.state.imgContainer) : null,
     },
       () => {
         this.setIndicatorAcitve(this.state.currentIndex)
@@ -173,9 +184,10 @@ class FocusImg extends React.Component {
     return true;
   }
   render() {
+    const { imgWidth, totalImgCount } = this.props;
     return (
       <section className='banner_foucsImg'>
-        <ul className='foucsImg_container' ref={(ul) => { this.state.imgContainer = ul }}
+        <ul className='foucsImg_container' style={{ width: ISIE9 ? imgWidth * totalImgCount : imgWidth }} ref={(ul) => { this.state.imgContainer = ul }}
           onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}
         >
           {
@@ -188,17 +200,19 @@ class FocusImg extends React.Component {
             })
           }
         </ul>
+        {/* <div className='indicator_container'> */}
         <ul className='foucsImg_indicator' onClick={this.HandleIndicatorClick} ref={(ul) => { this.state.indicatorContainer = ul }}>
           {
             (() => {
               const result = [];
-              for (let i = 0; i < this.props.totalImgCount; i++) {
-                result.push(<li className='indicator_item' key={Math.random()}></li>);
+              for (let i = 0; i < totalImgCount; i++) {
+                result.push(<li className='indicator_item' key={Math.random()} style={{ width: ISIE9 ? (200 - (2 * 3 * totalImgCount)) / totalImgCount : 'auto' }}></li >);
               }
               return result;
             })()
           }
         </ul>
+        {/* </div> */}
         <div className='arrow_left switchControl' onClick={this.handleArrowClick} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>&lt;</div>
         <div className='arrow_right switchControl' onClick={this.handleArrowClick} onMouseEnter={this.handleMouseEnter} onMouseLeave={this.handleMouseLeave}>&gt;</div>
       </section>
