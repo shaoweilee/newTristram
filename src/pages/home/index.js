@@ -36,7 +36,7 @@ class Home extends React.Component {
               imgWidth={625}
               loop={true}
               totalImgCount={3}
-              // imgSource={this.props.focusImgData.toJS()}
+              imgSource={this.props.focusImgData.toJS()}
               imgSource={
                 [
                   {
