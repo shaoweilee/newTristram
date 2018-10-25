@@ -4,7 +4,8 @@ import ReactDOM from "react-dom";
 import { App } from "./App";
 import "./common.scss";
 import "./statics/iconfont/iconfont.scss";
-if (window.navigator.userAgent.indexOf('MSIE 9.0') > 0) {
+import { ISIE9 } from "./common/ieTest";
+if (ISIE9) {
   import('./ie9.scss');
 }
 ReactDOM.render(

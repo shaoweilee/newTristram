@@ -5,6 +5,7 @@ import { CSSTransition } from "react-transition-group";
 import { actionCreators, constants } from "./store";
 import { actionCreators as loginActionCreators } from "../../pages/login/store";
 import { authentication } from "../authentication";
+import { ISIE } from "../ieTest";
 import "./header.scss";
 import logoPic from "../../statics/tristram.jpg";
 import { requestURL } from "../config";
@@ -32,7 +33,7 @@ class Header extends React.Component {
           <li className='contentItem' key={JsList[i]}>
             <Link className='contentItem_link' to={{
               pathname: '/search',
-              search: `keyword=${JsList[i]}`,
+              search: `keyword=${ISIE ? encodeURIComponent(JsList[i]) : JsList[i]}`,
             }} target='_blank'>{JsList[i]}</Link>
           </li>
         );
@@ -165,7 +166,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionCreators.logout());
     },
     handleSearchChange({ target: { value } }) {
-      dispatch(actionCreators.changeSearchValue(value));
+      dispatch(actionCreators.changeSearchValue(ISIE ? encodeURIComponent(value) : value));
     },
     handleInputKeyDown(e, searchValue) {
       if (e.keyCode === 13 && searchValue.trim() !== '') {

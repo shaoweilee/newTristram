@@ -1,8 +1,7 @@
 import React from "react";
 import { Move } from "../../../../common/move";
+import { ISIE9 } from "../../../../common/ieTest";
 import "./FocusImg.scss";
-
-const ISIE9 = window.navigator.userAgent.indexOf('MSIE 9.0') > 0;
 
 //IE9不支持classlist，手动添加
 if (!("classList" in document.documentElement)) {
