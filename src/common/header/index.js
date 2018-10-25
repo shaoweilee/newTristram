@@ -87,7 +87,7 @@ class Header extends React.Component {
                     <input placeholder='搜索' onFocus={() => { handleInputFoucus(list) }} onBlur={handleInputBlur} value={searchValue} onChange={handleSearchChange} onKeyDown={(e) => { handleInputKeyDown(e, searchValue) }} />
                   </CSSTransition>
                   <CSSTransition in={focused} timeout={300} classNames='fade' >
-                    <a className='search_btn' href={`/search?keyword=${searchValue}`} onClick={(e) => { handleSearchClick(e, searchValue) }} target='_blank'><i className='iconfont icon-fangdajing'></i></a>
+                    <a className='search_btn' href={`/search?keyword=${ISIE ? encodeURIComponent(searchValue) : searchValue}`} onClick={(e) => { handleSearchClick(e, searchValue) }} target='_blank'><i className='iconfont icon-fangdajing'></i></a>
                   </CSSTransition>
                 </div>
                 {this.showSearch(focused)}
@@ -166,12 +166,12 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionCreators.logout());
     },
     handleSearchChange({ target: { value } }) {
-      dispatch(actionCreators.changeSearchValue(ISIE ? encodeURIComponent(value) : value));
+      dispatch(actionCreators.changeSearchValue(value));
     },
     handleInputKeyDown(e, searchValue) {
       if (e.keyCode === 13 && searchValue.trim() !== '') {
         // window.open(`http://192.168.1.110:1001/search?keyword=${searchValue}`, '_blank');
-        window.open(`${requestURL}search?keyword=${searchValue}`, '_blank');
+        window.open(`${requestURL}search?keyword=${ISIE ? encodeURIComponent(searchValue) : searchValue}`, '_blank');
       }
     },
     handleSearchClick(e, searchValue) {
