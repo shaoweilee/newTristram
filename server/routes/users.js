@@ -11,7 +11,7 @@ router.get('/authentication', (req, res) => {//use coolie to authorize.
     const flag = await userModel.find({
       where: { id, cookieToken }
     });
-    res.status(200).set('Cache-control', 'no-cache').send(flag ? '1' : '0');
+    res.status(200).set('Cache-control', 'no-store').send(flag ? '1' : '0');
   })();
 });
 
@@ -93,6 +93,6 @@ router.get('/logout', (req, res) => {
       where: { id, cookieToken },
     }
   );
-  res.status(200).send({ code: 1 });
+  res.status(200).set('Cache-control', 'no-store').send({ code: 1 });
 });
 module.exports = router;
