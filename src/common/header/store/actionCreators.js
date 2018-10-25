@@ -5,6 +5,7 @@ import * as constants from "./actionTypes";
 
 import { actionCreators } from "../../../pages/login/store";
 import { requestURL } from "../../config";
+import { ISIE } from "../../ieTest";
 const change_list_action = (data) => {
   return {
     type: constants.CHANGE_LIST,
@@ -55,7 +56,7 @@ const getList = () => {
 };
 const logout = () => {
   return (dispatch) => {
-    axios.get(`${requestURL}user/logout`)
+    axios.get(`${requestURL}user/logout${ISIE ? `token=${Date.now()}` : ''}`)
       .then(({ data: { code } }) => {
         if (code) {
           dispatch(actionCreators.changeLoginStatus(false));
