@@ -8,9 +8,12 @@
       color: #ea6f5a; }
 .not_container {
   margin-top: 200px;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center; }
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center; }
   .not_container .not_description {
     font-size: 30px; }
     .not_container .not_description .not_keyword {
@@ -19,6 +22,7 @@
   font-size: inherit; }
 
 .articlelist_container .articlelist_list .articlelist_Item {
+  display: -ms-flexbox;
   display: flex;
   height: 100px;
   padding: 25px 0;
@@ -27,9 +31,12 @@
   .articlelist_container .articlelist_list .articlelist_Item:first-of-type {
     border-top: 1px solid #f0f0f0; }
   .articlelist_container .articlelist_list .articlelist_Item .articlelist_summary {
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column;
-    justify-content: space-between; }
+    -ms-flex-flow: column;
+        flex-flow: column;
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
     .articlelist_container .articlelist_list .articlelist_Item .articlelist_summary .summary_title {
       color: #333;
       font-size: 18px;
