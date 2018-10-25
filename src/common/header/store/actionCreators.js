@@ -56,7 +56,7 @@ const getList = () => {
 };
 const logout = () => {
   return (dispatch) => {
-    axios.get(`${requestURL}user/logout${ISIE ? `token=${Date.now()}` : ''}`)
+    axios.get(`${requestURL}user/logout${ISIE ? `?token=${Date.now()}` : ''}`)
       .then(({ data: { code } }) => {
         if (code) {
           dispatch(actionCreators.changeLoginStatus(false));
