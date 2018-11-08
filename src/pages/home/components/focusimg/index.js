@@ -193,7 +193,7 @@ class FocusImg extends React.Component {
             this.props.imgSource.map((item) => {
               return (
                 <li className='foucsImg_item' key={item.id}>
-                  <a href={`/detail/${item.id}`} target='_blank' className='foucsImg_link'><img src={item.img} className='banner_img' /></a>
+                  <a href={`${item.link}`} target='_blank' className='foucsImg_link'><img src={item.img} className='banner_img' /></a>
                 </li>
               );
             })
