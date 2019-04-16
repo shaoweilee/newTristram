@@ -39,6 +39,11 @@
         left: 50%;
         transform: translateX(-50%);
       }
+      @media screen and (max-width: 768px) {
+        img{
+          max-width: 100% !important;
+        }
+      }
       @include editor;
     }
   }

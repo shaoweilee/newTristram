@@ -4,6 +4,7 @@ import { withRouter } from "react-router-dom";
 
 import { actionCreators } from "./store";
 import Header from "../../common/header";
+import { mobilecheck } from "../../mobiletest";
 import "./index.scss";
 
 class Detail extends React.Component {
@@ -14,9 +15,9 @@ class Detail extends React.Component {
     const { title, content, authorNickname, createTime, updateTime } = this.props;
     return (
       <React.Fragment>
-        <Header />
+        {mobilecheck() && <Header />}
         <section className='article_container'>
-          <article className='article_content'>
+          <article className='article_content' style={{ width: mobilecheck() && '90vw' }}>
             <h1 className='article_title'>{title}</h1>
             <aside className='article_info'>
               <div className='info_author'>

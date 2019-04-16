@@ -116,21 +116,21 @@ module.exports = {
   ],
   optimization: {
     splitChunks: {
-      chunks: 'all',
+      // chunks: 'all',
       cacheGroups: {
         // 提取 node_modules 中代码
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all'
+          chunks: 'initial'
         },
-        commons: {
-          // async 设置提取异步代码中的公用代码
-          chunks: 'async',
-          name: 'commons-async',
-          minSize: 0,
-          minChunks: 2
-        }
+        // commons: {
+        //   // async 设置提取异步代码中的公用代码
+        //   chunks: 'async',
+        //   name: 'commons-async',
+        //   minSize: 0,
+        //   minChunks: 2
+        // }
       },
     },
     runtimeChunk: {
