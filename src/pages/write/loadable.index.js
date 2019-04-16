@@ -19,8 +19,8 @@ class LoadableComponent extends React.Component {
   }
   componentDidMount() {
     import('./index')
-      .then((WriteComponent) => {
-        this.setState({ component: WriteComponent });
+      .then(({ connectedWrite }) => {
+        this.setState({ component: connectedWrite });
       })
   }
   render() {

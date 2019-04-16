@@ -350,5 +350,6 @@ const mapDispatch = (dispatch) => {
     },
   };
 };
-
-export default connect(mapState, mapDispatch)(withRouter(Write));
+const connectedWrite = connect(mapState, mapDispatch)(withRouter(Write))
+// export default connect(mapState, mapDispatch)(withRouter(Write));
+export default { connectedWrite };
