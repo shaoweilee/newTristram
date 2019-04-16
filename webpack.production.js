@@ -122,7 +122,7 @@ module.exports = {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'initial'
+          chunks: 'all'
         },
         // commons: {
         //   // async 设置提取异步代码中的公用代码
