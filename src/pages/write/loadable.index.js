@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Loadable from "react-loadable";
 import { FullPageLoading } from "../../common/fullPageLoading";
 
