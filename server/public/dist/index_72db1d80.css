@@ -142,6 +142,14 @@ a {
 a:hover {
   text-decoration: none;
   cursor: pointer; }
+.loading_container {
+  height: 100vh;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center; }
 .header {
   height: 56px;
   border-bottom: 1px solid #e3e3e3; }
@@ -295,14 +303,6 @@ a:hover {
         color: #ea6f5a;
         border: 1px solid #ea6f5a;
         width: 80px; }
-.loading_container {
-  height: 100vh;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center; }
 @font-face {
   font-family: "iconfont";
   src: url(http://www.herosanctuary.com/static/dist/037c0f734e07bd11e39feb594ad96c8c.eot);
@@ -337,6 +337,31 @@ a:hover {
 
 .icon-xin:before {
   content: "\E6E0"; }
+.topic_container {
+  margin: 30px 0; }
+  .topic_container .topic_list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    font-size: 14px; }
+    .topic_container .topic_list .topic_item {
+      margin: 0 20px 20px 0;
+      background-color: #f7f7f7;
+      border: 1px solid #dcdcdc;
+      border-radius: 4px;
+      height: 32px;
+      overflow: hidden; }
+      .topic_container .topic_list .topic_item .topic_link {
+        display: -ms-inline-flexbox;
+        display: inline-flex; }
+        .topic_container .topic_list .topic_item .topic_link .topic_img {
+          width: 32px;
+          height: 32px; }
+        .topic_container .topic_list .topic_item .topic_link .topic_text {
+          color: #333;
+          line-height: 32px;
+          padding: 0 10px; }
 .banner_foucsImg {
   position: relative;
   overflow: hidden; }
@@ -409,31 +434,6 @@ a:hover {
     left: 0; }
   .banner_foucsImg .arrow_right {
     right: 0; }
-.topic_container {
-  margin: 30px 0; }
-  .topic_container .topic_list {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-flow: row wrap;
-        flex-flow: row wrap;
-    font-size: 14px; }
-    .topic_container .topic_list .topic_item {
-      margin: 0 20px 20px 0;
-      background-color: #f7f7f7;
-      border: 1px solid #dcdcdc;
-      border-radius: 4px;
-      height: 32px;
-      overflow: hidden; }
-      .topic_container .topic_list .topic_item .topic_link {
-        display: -ms-inline-flexbox;
-        display: inline-flex; }
-        .topic_container .topic_list .topic_item .topic_link .topic_img {
-          width: 32px;
-          height: 32px; }
-        .topic_container .topic_list .topic_item .topic_link .topic_text {
-          color: #333;
-          line-height: 32px;
-          padding: 0 10px; }
 .articlelist_container .iconfont {
   font-size: inherit; }
 

@@ -15,7 +15,7 @@ class Detail extends React.Component {
     const { title, content, authorNickname, createTime, updateTime } = this.props;
     return (
       <React.Fragment>
-        {mobilecheck() && <Header />}
+        {!mobilecheck() && <Header />}
         <section className='article_container'>
           <article className='article_content' style={{ width: mobilecheck() && '90vw' }}>
             <h1 className='article_title'>{title}</h1>
