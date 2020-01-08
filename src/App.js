@@ -10,6 +10,7 @@ import Login from "./pages/login/loadable.index";
 import SignUp from "./pages/signup/loadable.index";
 import Write from "./pages/write/loadable.index";
 import Search from "./pages/search/loadable.index";
+import Footer from "./common/footer";
 import { store } from "./store";
 
 class App extends React.Component {
@@ -25,6 +26,7 @@ class App extends React.Component {
             <Route path='/detail/:id' exact component={Detail}></Route>
             <Route path='/write' exact component={Write}></Route>
             <Route path='/search' exact component={Search}></Route>
+            <Route component={Footer}></Route>
           </React.Fragment>
         </BrowserRouter>
       </Provider>
