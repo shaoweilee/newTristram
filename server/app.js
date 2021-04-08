@@ -42,7 +42,7 @@ app.use('/write', [notebookRouter, articleRouter]);
 app.use('/upload', uploadRouter);
 app.use('/search', searchRouter);
 
-const server = app.listen(config.env === 'production' ? 80 : 5499, function () {
+const server = app.listen(config.env === 'production' ? 8080 : 5499, function () {
   const port = server.address().port;
   console.log(`服务器在${port}端口运行！`);
 });
